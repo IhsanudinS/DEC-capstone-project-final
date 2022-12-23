@@ -67,8 +67,15 @@
 
     #list-item {
         grid-template-columns: 1fr;
+        margin: 0;
+        padding: 0;
     }
     
+    .vol-form {
+        margin: 0;
+        padding: 0;
+    }
+
     .pages {
         padding: 5px;
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
