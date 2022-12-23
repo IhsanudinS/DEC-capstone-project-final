@@ -8,7 +8,7 @@ class footerBar extends HTMLElement {
         <div class="footer-content">
             <h3>Disability Education Care</h3>
             <p>Membantu para penyandang disabilitas dari segi pendidikan</p>
-            <p>Contact:</p>
+            <p style="font-weight: bold">Contact:</p>
             <ul class="socials">
             <li><a href="https://www.linkedin.com/in/yazidaqsaraisnaldi/" target="_blank" rel="noreferrer noopener"><i class="fa fa-linkedin-square"></i>Yazid</a></li>
             <li><a href="https://www.linkedin.com/in/afdol-fahmul-rozi-siregar-3188a024a/" target="_blank" rel="noreferrer noopener"><i class="fa fa-linkedin-square"></i>Afdol</a></li>
