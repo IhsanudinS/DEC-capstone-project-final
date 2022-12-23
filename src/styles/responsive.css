@@ -63,6 +63,17 @@
 @media screen and (max-width: 700px) {
     .main-page {
         grid-template-columns: 1fr;
+        gap: 0;
+        margin: 0;
+    }
+
+    .header-area .links li {
+        margin-left: 0;
+    }
+
+    .footer-content p{
+        margin: 10px;
+        text-align: center;
     }
 
     #list-item {
@@ -83,5 +94,10 @@
         max-height: 100%;
         overflow: hidden;
         color: #5d5d5d;
+    }
+
+    .about-us p {
+        padding: 0;
+        margin: 0;
     }
 }
