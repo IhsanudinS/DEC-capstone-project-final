@@ -1,3 +1,5 @@
+import { createFormVolunteer } from "../templates/template-creator";
+
 const joinForm = {
     async render() {
         return `
@@ -13,39 +15,85 @@ const joinForm = {
     async afterRender() {
         const detailContainer = document.querySelector('#item');
 
-        detailContainer.innerHTML = `
-        <div class="vol-form">
-        <form>
-            <label for="fname">Nama</label>
-            <input type="text" id="name" name="name" placeholder="Your name..">
+        detailContainer.innerHTML = createFormVolunteer;
 
-            <label for="email">Email</label>
-            <input type="text" id="email" name="email" placeholder="Your email..">
+        function printerrtext(elemId, hintMsg) {
+            document.getElementById(elemId).innerHTML = hintMsg;
+        }
 
-            <label for="email">No Telepon</label>
-            <input type="text" id="notlp" name="notlp" placeholder="Your number..">
+        function inputValidation(){
+            const name = document.inputForm.name.value;
+            const email = document.inputForm.email.value;
+            const mobile = document.inputForm.mobile.value;
+            const city = document.inputForm.city.value;
+            const job = document.inputForm.job.value;
+            const education = document.inputForm.education.value;
+            let [nameErr,emailErr,mobileErr,cityErr,jobErr,educationErr] = [true,true,true,true,true,true];
 
-            <label for="pendidikan">Pendidikan Terakhir</label>
-            <input type="text" id="pendidikan" name="pendidikan" placeholder="......">
+            if(name == "") {
+                printerrtext("nameErr", "Please enter your name");
+                } else {
+                const regex = /^[a-zA-Z\s]+$/;
+                if(regex.test(name) === false) {
+                printerrtext("nameErr", "Please enter a valid name");
+                } else {
+                printerrtext("nameErr", "");
+                nameErr = false;
+                }
+            }
 
-            <label for="pendidikan">Pekerjaan</label>
-            <input type="text" id="pekerjaan" name="pekerjaan" placeholder="......">
+            if(email == "") {
+                printerrtext("emailErr", "Please enter your email address");
+                } else {
+                // Regular expression for basic email validation
+                const regex = /^\S+@\S+\.\S+$/;
+                if(regex.test(email) === false) {
+                printerrtext("emailErr", "Please enter a valid email address");
+                } else{
+                printerrtext("emailErr", "");
+                emailErr = false;
+                }
+            }
 
-            <label for="city">Domisili</label>
-            <select id="city" name="city">
-            <option value="">.....</option>
-            <option value="jakarta">Jakarta</option>
-            <option value="surabaya">Surabaya</option>
-            <option value="semarang">Semarang</option>
-            <option value="bandung">Bandung</option>
-            <option value="madiun">Madiun</option>
-            <option value="jogja">Jogja</option>
-            </select>
-        
-            <input type="submit" value="Submit">
-        </form>
-        </div>
-        `;
+            if(mobile == "") {
+                printerrtext("mobileErr", "Please enter your mobile number");
+                } else {
+                const regex = /^[1-11]\d{11}$/;
+                if(regex.test(mobile) === false) {
+                printerrtext("mobileErr", "Please enter a valid 10 digit mobile number");
+                } else{
+                printerrtext("mobileErr", "");
+                mobileErr = false;
+                }
+            }
+
+            if(city == "Select") {
+                printerrtext("cityErr", "Please select your city");
+                } else {
+                printerrtext("cityErr", "");
+                cityErr = false;
+            }
+
+            if(job == "") {
+                printerrtext("jobErr", "Please enter your job");
+                } else {
+                printerrtext("jobErr", "");
+                jobErr = false;
+            }
+
+            if(education == "") {
+                printerrtext("educationErr", "Please enter your education");
+                } else {
+                printerrtext("educationErr", "");
+                educationErr = false;
+            }
+
+        }
+
+        form.addEventListener('submit',function(e) {
+            e.preventDefault();
+            inputValidation();
+        }); 
     }
 
 

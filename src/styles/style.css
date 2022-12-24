@@ -514,3 +514,8 @@ input[type=submit]:hover {
     padding: 0 50px 0 50px;
     margin: 0 30px 0 30px;
 }
+
+.errtext {
+    color: red;
+    font-size: 90%;
+}

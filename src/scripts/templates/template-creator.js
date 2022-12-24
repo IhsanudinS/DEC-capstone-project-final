@@ -16,4 +16,39 @@ linear-gradient(90deg, rgba(255,255,255,0.8580474426098564) 40%, rgba(238,238,23
 </div>
 `;
 
-export { createSchoolDetailTemplate };
+const createFormVolunteer = `
+    <div class="vol-form">
+        <form name="inputForm" id="form">
+            <label for="fname">Nama</label>
+            <input type="text" id="name" name="name" placeholder="Your name..">
+            <div class="errtext" id="nameErr"></div>
+            <label for="email">Email</label>
+            <input type="text" id="email" name="email" placeholder="Your email..">
+            <div class="errtext" id="emailErr"></div>
+            <label for="email">No Telepon</label>
+            <input type="text" id="mobile" name="mobile" placeholder="Your number..">
+            <div class="errtext" id="mobileErr"></div>
+            <label for="pendidikan">Pendidikan Terakhir</label>
+            <input type="text" id="education" name="education" placeholder="......">
+            <div class="errtext" id="educationErr"></div>
+            <label for="pendidikan">Pekerjaan</label>
+            <input type="text" id="job" name="job" placeholder="......">
+            <div class="errtext" id="jobErr"></div>
+            <label for="city">Domisili</label>
+            <select id="city" name="city">
+            <option value="Select">.....</option>
+            <option value="jakarta">Jakarta</option>
+            <option value="surabaya">Surabaya</option>
+            <option value="semarang">Semarang</option>
+            <option value="bandung">Bandung</option>
+            <option value="madiun">Madiun</option>
+            <option value="jogja">Jogja</option>
+            </select>
+            <div class="errtext" id="cityErr"></div>
+        
+            <input type="submit" value="Submit">
+        </form>
+        </div>
+    `;
+
+export { createSchoolDetailTemplate, createFormVolunteer };
